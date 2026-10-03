@@ -261,8 +261,8 @@ test('Cockpit owns a focused shared Display portal and compact Radio controls', 
   assert.match(html, /data-cockpit-display-slot="hud"/);
   assert.match(html, /data-cockpit-display-slot="detection"[\s\S]*?data-cockpit-display-slot="parameters"[\s\S]*?data-cockpit-display-slot="models3d"/);
   assert.doesNotMatch(html, /data-cockpit-display-slot="presets"/);
-  assert.match(html, /id="clear-selected-layers"[^>]*aria-label="Clear selected data layers"/);
-  assert.match(html, /id="reset-globe-view"[^>]*aria-label="Reset to full globe view"/);
+  assert.match(html, /id="clear-selected-layers"[^>]*aria-label="Limpiar capas seleccionadas"/);
+  assert.match(html, /id="reset-globe-view"[^>]*aria-label="Restablecer vista del globo"/);
   assert.match(css, /#top-center-actions\s*\{[\s\S]*?left:\s*50%;[\s\S]*?display:\s*flex;[\s\S]*?transform:\s*translateX\(-50%\)/);
   assert.match(
     css,
@@ -793,9 +793,9 @@ test('Global Context names its mixed contact cycle without changing the stable m
     /<button id="global-context-flights-btn"[\s\S]*?<\/button>/,
   );
   assert.ok(match, 'Global Context contacts button is missing');
-  assert.match(match[0], />CONTACTS</);
-  assert.match(match[0], /aria-label="CONTACTS"/);
-  assert.match(match[0], /title="Cycles the nearest contacts of whatever type you select — planes, vessels, installations\. Satellites track independently\."/);
+  assert.match(match[0], />CONTACTOS</);
+  assert.match(match[0], /aria-label="Contactos"/);
+  assert.match(match[0], /title="Recorre los contactos cercanos que selecciones: aeronaves, embarcaciones o instalaciones\. Los satélites se siguen por separado\."/);
   assert.doesNotMatch(match[0], />FLIGHTS</);
 });
 
@@ -814,8 +814,8 @@ test('Global Context standby describes both chooser modes', () => {
     /<div id="context-mode-standby"[\s\S]*?<\/div>/,
   );
   assert.ok(match, 'Global Context standby is missing');
-  assert.match(match[0], /CONTACTS — nearest planes · vessels · sites/);
-  assert.match(match[0], /SPACE MISSIONS — launches &amp; orbital assets/);
+  assert.match(match[0], /CONTACTOS — aeronaves · embarcaciones · sitios cercanos/);
+  assert.match(match[0], /MISIONES ESPACIALES — lanzamientos y activos orbitales/);
 });
 
 test('cockpit briefing cycle control keeps its state as the accessible name', () => {
